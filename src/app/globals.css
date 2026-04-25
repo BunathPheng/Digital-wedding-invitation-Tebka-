@@ -1,26 +1,508 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF9F6;
+  --foreground: #3E2723;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4E4BC;
+  --color-gold-dark: #A67C00;
+  --color-maroon: #5E0B0B;
+  --color-red-soft: #D32F2F;
+  --color-pink-soft: #FCE4EC;
+  --color-cream: #FAF9F6;
+  --color-brown: #3E2723;
+  --color-gold-metallic: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-maroon: var(--color-maroon);
+  --color-red-soft: var(--color-red-soft);
+  --color-pink-soft: var(--color-pink-soft);
+  --color-cream: var(--color-cream);
+  --color-brown: var(--color-brown);
+  --font-khmer: var(--font-khmer);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-khmer), var(--font-playfair), serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --- Traditional Khmer Invitation Framework --- */
+
+.invitation-card-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 60px;
+  background: white;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
+  min-height: 1200px;
+}
+
+/* Highly Ornate Traditional Border */
+.trad-border-outer {
+  position: absolute;
+  inset: 15px;
+  border: 4px solid var(--color-gold);
+}
+
+.trad-border-inner {
+  position: absolute;
+  inset: 25px;
+  border: 1px solid var(--color-gold-dark);
+}
+
+/* Corner Filigree SVGs */
+.corner-ornament-trad {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 20;
+  pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.top-left-ornament {
+  top: 10px;
+  left: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q60,0 60,60 Q0,60 0,100 M20,0 Q50,20 20,50' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M10,10 Q40,15 15,40' fill='none' stroke='%23D4AF37' stroke-width='1'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23D4AF37'/%3E%3C/svg%3E");
+}
+
+.top-right-ornament {
+  top: 10px;
+  right: 10px;
+  transform: rotate(90deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q60,0 60,60 Q0,60 0,100 M20,0 Q50,20 20,50' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M10,10 Q40,15 15,40' fill='none' stroke='%23D4AF37' stroke-width='1'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23D4AF37'/%3E%3C/svg%3E");
+}
+
+.bottom-left-ornament {
+  bottom: 10px;
+  left: 10px;
+  transform: rotate(-90deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q60,0 60,60 Q0,60 0,100 M20,0 Q50,20 20,50' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M10,10 Q40,15 15,40' fill='none' stroke='%23D4AF37' stroke-width='1'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23D4AF37'/%3E%3C/svg%3E");
+}
+
+.bottom-right-ornament {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q60,0 60,60 Q0,60 0,100 M20,0 Q50,20 20,50' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M10,10 Q40,15 15,40' fill='none' stroke='%23D4AF37' stroke-width='1'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23D4AF37'/%3E%3C/svg%3E");
+}
+
+/* Dove Motif */
+.dove-motif {
+  width: 60px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3E%3Cpath d='M21,12a1,1,0,0,0-1,1,7,7,0,0,1-7,7,1,1,0,0,0,0,2,9,9,0,0,0,9-9A1,1,0,0,0,21,12Zm-9-1a5,5,0,0,0-5,5,1,1,0,0,0,2,0,3,3,0,0,1,3-3,1,1,0,0,0,0-2Zm0-4a9,9,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,7-7,1,1,0,0,0,0-2Z'/%3E%3Ccircle cx='15' cy='9' r='2'/%3E%3C/svg%3E");
+  background-size: contain;
+}
+
+/* Formal Khmer Text Styles */
+@utility khmer-card-title {
+  font-family: var(--font-khmer);
+  color: var(--color-gold-dark);
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+@utility khmer-formal-body {
+  font-family: var(--font-khmer);
+  color: var(--color-brown);
+  font-size: 1.25rem;
+  line-height: 2;
+  text-align: center;
+}
+
+@utility gold-divider-form {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4AF37, #A67C00, #D4AF37, transparent);
+  width: 60%;
+  margin: 3rem auto;
+}
+
+.paper-texture-card {
+  /* Removed masking texture */
+}
+
+/* --- Kbach Ornaments (SVG) --- */
+
+.kbach-divider {
+  width: 100%;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60'%3E%3Cpath d='M0,30 Q100,0 200,30 Q300,60 400,30' fill='none' stroke='%23D4AF37' stroke-width='1' opacity='0.5'/%3E%3Ccircle cx='200' cy='30' r='8' fill='%23D4AF37'/%3E%3Cpath d='M180,30 Q200,10 220,30 Q200,50 180,30' fill='%23A67C00'/%3E%3Cpath d='M150,30 Q160,20 170,30 Q160,40 150,30 M230,30 Q240,20 250,30 Q240,40 230,30' fill='%23D4AF37'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 2rem 0;
+}
+
+.kbach-corner-premium {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q100,0 100,100 L0,100 Z' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M0,0 Q50,0 50,20 Q20,30 0,60 Z' fill='%23D4AF37' opacity='0.8'/%3E%3Cpath d='M10,0 Q40,10 30,40 Q10,30 10,10' fill='%23A67C00'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23F4E4BC'/%3E%3C/svg%3E");
+  background-size: contain;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.lunar-date-box {
+  background: white;
+  border: 1px solid var(--color-gold-light);
+  padding: 1.5rem 3rem;
+  position: relative;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.lunar-date-box::before,
+.lunar-date-box::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4AF37'%3E%3Cpath d='M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z'/%3E%3C/svg%3E");
+  background-size: contain;
+}
+
+.lunar-date-box::before {
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.lunar-date-box::after {
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* --- Section Specific Traditional Styles --- */
+
+.trad-section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.trad-section-title span {
+  font-family: var(--font-playfair);
+  color: var(--color-gold-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+@media (min-width: 768px) {
+  .trad-section-title h2 {
+    font-size: 3.5rem;
+  }
+
+  .trad-section-title span {
+    font-size: 1rem;
+    letter-spacing: 0.5em;
+  }
+}
+
+.trad-section-title h2 {
+  font-family: var(--font-khmer);
+  color: var(--color-maroon);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.trad-section-title span {
+  font-family: var(--font-playfair);
+  color: var(--color-gold-dark);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 700;
+}
+
+.trad-photo-frame {
+  position: relative;
+  padding: 15px;
+  background: white;
+  border: 1px solid var(--color-gold-light);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.trad-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1.5px solid var(--color-gold);
+}
+
+.trad-card-luxury {
+  background: white;
+  padding: 50px;
+  position: relative;
+  border: 1px solid var(--color-gold-light);
+}
+
+.trad-card-luxury::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--color-gold);
+  pointer-events: none;
+}
+
+/* Form Styles */
+.trad-form-group {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.trad-form-label {
+  display: block;
+  font-family: var(--font-khmer);
+  color: var(--color-gold-dark);
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.trad-form-input {
+  width: 100%;
+  background: var(--color-cream);
+  border: none;
+  border-bottom: 2px solid var(--color-gold-light);
+  padding: 1rem;
+  font-family: var(--font-khmer);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.trad-form-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-maroon);
+  background: white;
+}
+
+/* Animations Restoration */
+@keyframes petalsFloat {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  top: -10vh;
+  width: 35px;
+  height: 35px;
+  background-image: url('/images/searchimage-Photoroom.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 100;
+  animation: petalsFloat linear infinite;
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.sparkle-trad {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold-light);
+  border-radius: 50%;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+/* Utility classes for layout */
+@utility khmer-font {
+  font-family: var(--font-khmer);
+}
+
+@utility english-font {
+  font-family: var(--font-playfair);
+}
+
+@utility text-maroon {
+  color: var(--color-maroon);
+}
+
+@utility text-gold {
+  color: var(--color-gold);
+}
+
+@utility bg-cream {
+  background-color: var(--color-cream);
+}
+
+.pattern-bg {
+  background-image: url('/images/pattern.png');
+  background-size: 500px auto;
+  background-repeat: repeat;
+  filter: sepia(100%) saturate(150%) hue-rotate(5deg) brightness(0.9) contrast(1.2);
+}
+
+/* --- Royal Background System --- */
+
+.royal-silk-bg {
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 80%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.royal-silk-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/royal_silk_texture.png');
+  background-repeat: repeat;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.kbach-bg-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url('/images/pattern.png');
+  background-size: 500px auto;
+  background-repeat: repeat;
+  z-index: 0;
+  filter: sepia(100%) saturate(150%) hue-rotate(5deg) brightness(0.9) contrast(1.2);
+}
+
+.glow-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.center-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal-up {
+  opacity: 0;
+  animation: revealUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Mockup Specific Refinements --- */
+
+.guest-name-frame {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1rem 2rem;
+  margin: 1.5rem 0;
+  min-width: 260px;
+}
+
+.guest-name-frame::before,
+.guest-name-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  pointer-events: none;
+}
+
+.guest-name-frame::before {
+  top: -6px;
+  left: -6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.guest-name-frame::after {
+  bottom: -6px;
+  right: -6px;
+  border-left: none;
+  border-top: none;
+}
+
+.guest-name-frame-inner {
+  position: absolute;
+  inset: -6px;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.guest-frame-ornament {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+.mockup-hero-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 2px 10px rgba(0, 0, 0, 0.8);
 }

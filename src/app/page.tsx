@@ -223,11 +223,12 @@ function Petals() {
   const [petals, setPetals] = React.useState<Array<{ left: string; duration: string; delay: string }>>([]);
 
   React.useEffect(() => {
+    // Reduced from 12 to 6 for a more subtle, less cluttered effect
     setPetals(
-      [...Array(12)].map(() => ({
+      [...Array(6)].map(() => ({
         left: `${Math.random() * 100}%`,
-        duration: `${Math.random() * 10 + 10}s`,
-        delay: `${Math.random() * 5}s`,
+        duration: `${Math.random() * 15 + 15}s`, // Slower fall (15s to 30s)
+        delay: `${Math.random() * 8}s`, // More spread out start times
       }))
     );
   }, []);
@@ -237,7 +238,7 @@ function Petals() {
       {petals.map((style, i) => (
         <div
           key={i}
-          className="petal opacity-40 md:opacity-50"
+          className="petal opacity-20 md:opacity-30" // Reduced opacity for consistency and subtlety
           style={{
             left: style.left,
             animationDuration: style.duration,

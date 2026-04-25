@@ -23,13 +23,14 @@ export default function Home() {
         <section id="hero" className="mb-24 relative min-h-[85vh] flex items-center justify-center overflow-hidden -mt-20">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/b6337299d6257453281023b70419d2ee.jpg"
+              src="/images/361A1739.jpg"
               alt="Wedding Hero"
               fill
               className="object-cover"
               priority
+              quality={100}
             />
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-black/20" />
           </div>
 
           <div className="relative z-10 w-full max-w-4xl px-4 flex flex-col items-center text-center text-white">

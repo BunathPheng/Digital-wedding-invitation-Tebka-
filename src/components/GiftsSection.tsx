@@ -9,15 +9,17 @@ export default function GiftsSection() {
     const accounts = {
         groom: {
             bank: "ABA Bank",
-            name: "PHENG BUNNAT",
-            number: "000 123 456",
-            qr: "/images/qr_groom.png" // User can replace this
+            name: "PUTTHA GNANH",
+            khr: "003 764 045",
+            usd: "007 291 115",
+            qr: "/images/image.png"
         },
         bride: {
             bank: "ABA Bank",
             name: "CHAN DEVI",
-            number: "000 654 321",
-            qr: "/images/qr_bride.png" // User can replace this
+            khr: "003 764 045", // Assuming same for bride for now unless told otherwise
+            usd: "007 291 115",
+            qr: "/images/image.png"
         }
     };
 
@@ -56,20 +58,17 @@ export default function GiftsSection() {
 
                     <div className="p-8 md:p-12">
                         <div className="grid md:grid-cols-2 gap-10 items-center">
-                            {/* QR Code Placeholder */}
-                            <div className="relative aspect-square max-w-[280px] mx-auto w-full group">
+                            {/* QR Code */}
+                            <div className="relative aspect-[3/4] max-w-[320px] mx-auto w-full group">
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-gold/20 to-maroon/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
-                                <div className="relative h-full w-full bg-white p-4 rounded-2xl border-2 border-gold/30 shadow-lg flex items-center justify-center overflow-hidden">
-                                    {/* Mock QR image - User can replace actual file */}
-                                    <div className="w-full h-full bg-gradient-to-br from-cream to-white flex items-center justify-center relative">
-                                        <div className="absolute inset-0 opacity-10 pattern-bg" />
-                                        <svg className="w-20 h-20 text-maroon/20" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2v-2zm2 2h2v2h-2v-2zm2-2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm0-4h2v2h-2v-2zm-2 2h2v2h-2v-2zm2 2h2v2h-2v-2z" />
-                                        </svg>
-                                        <div className="absolute bottom-4 text-[10px] text-maroon/40 font-mono tracking-widest uppercase">Scan to Bless</div>
-                                    </div>
-                                    {/* You could use an actual Image tag here if user has QR images */}
-                                    {/* <Image src={accounts[activeTab].qr} alt="QR Code" fill className="object-contain" /> */}
+                                <div className="relative h-full w-full bg-white rounded-2xl border-2 border-gold/30 shadow-lg overflow-hidden flex items-center justify-center p-2">
+                                    <Image 
+                                        src={accounts[activeTab].qr} 
+                                        alt={`${accounts[activeTab].name} QR Code`} 
+                                        fill 
+                                        sizes="(max-width: 768px) 100vw, 320px"
+                                        className="object-contain p-4"
+                                    />
                                 </div>
                             </div>
 
@@ -81,18 +80,41 @@ export default function GiftsSection() {
                                 </div>
                                 <div>
                                     <h4 className="english-font text-gold-dark font-bold tracking-widest text-sm mb-1 uppercase">Account Name</h4>
-                                    <p className="khmer-font text-2xl md:text-3xl font-black text-maroon tracking-wide uppercase">{accounts[activeTab].name}</p>
+                                    <p className="khmer-font text-xl md:text-2xl font-black text-maroon tracking-wide uppercase">{accounts[activeTab].name}</p>
                                 </div>
+                                
+                                {/* KHR Account */}
                                 <div>
-                                    <h4 className="english-font text-gold-dark font-bold tracking-widest text-sm mb-1 uppercase">Account Number</h4>
+                                    <h4 className="english-font text-gold-dark font-bold tracking-widest text-xs mb-1 uppercase">KHR Account</h4>
                                     <div className="flex items-center justify-center md:justify-start gap-3">
-                                        <p className="english-font text-2xl md:text-3xl font-black text-maroon tracking-tighter">{accounts[activeTab].number}</p>
+                                        <p className="english-font text-xl md:text-2xl font-black text-maroon tracking-tighter">{accounts[activeTab].khr}</p>
                                         <button
                                             onClick={() => {
-                                                navigator.clipboard.writeText(accounts[activeTab].number);
-                                                alert('Account number copied!');
+                                                navigator.clipboard.writeText(accounts[activeTab].khr);
+                                                alert('KHR Account copied!');
                                             }}
                                             className="p-2 hover:bg-gold/10 rounded-full transition-colors"
+                                            title="Copy KHR Account"
+                                        >
+                                            <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* USD Account */}
+                                <div>
+                                    <h4 className="english-font text-gold-dark font-bold tracking-widest text-xs mb-1 uppercase">USD Account</h4>
+                                    <div className="flex items-center justify-center md:justify-start gap-3">
+                                        <p className="english-font text-xl md:text-2xl font-black text-maroon tracking-tighter">{accounts[activeTab].usd}</p>
+                                        <button
+                                            onClick={() => {
+                                                navigator.clipboard.writeText(accounts[activeTab].usd);
+                                                alert('USD Account copied!');
+                                            }}
+                                            className="p-2 hover:bg-gold/10 rounded-full transition-colors"
+                                            title="Copy USD Account"
                                         >
                                             <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />

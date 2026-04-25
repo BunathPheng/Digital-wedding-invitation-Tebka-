@@ -1,24 +1,25 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function LocationSection() {
     const [copied, setCopied] = useState(false);
 
     const venueDetails = {
-        name: "មជ្ឈមណ្ឌលកោះពេជ្រ",
-        nameEn: "Koh Pich Convention Center",
-        address: "ភ្នំពេញ, កម្ពុជា",
-        addressEn: "Diamond Island, Phnom Penh, Cambodia",
-        date: "០១ កុម្ភៈ ២០២៦",
-        time: "០៧:៣០ ព្រឹក | ០៤:៣០ ល្ងាច",
-        phone: "+855 12 345 678",
-        mapsUrl: "https://maps.google.com/?q=Diamond+Island+Phnom+Penh",
-        coordinates: "11.5564,104.9282"
+        name: "គេហដ្ឋានខាងស្រី",
+        nameEn: "Bride's Residence",
+        address: "ភូមិទី២ ឃុំរការខួរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ",
+        addressEn: "Village 2, Roka Khnor, Krouch Chhmar, Tboung Khmum",
+        date: "២៩ ឧសភា ២០២៦",
+        time: "០៤:០០ ល្ងាច",
+        phone: "+855 12 345 678", // Replace with real phone
+        mapsUrl: "https://maps.app.goo.gl/udC46bpQhd22WXKD7?g_st=it",
+        coordinates: "12.2289,105.8016" // Approx Krouch Chhmar
     };
 
     const copyAddress = () => {
-        navigator.clipboard.writeText(`${venueDetails.nameEn}, ${venueDetails.addressEn}`);
+        navigator.clipboard.writeText(`${venueDetails.name}, ${venueDetails.address}`);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -32,7 +33,7 @@ export default function LocationSection() {
                 {/* Section Title */}
                 <div className="trad-section-title mb-12 md:mb-20 text-center">
                     <span>Find Us Here</span>
-                    <h2 className="text-3xl md:text-5xl">ទីតាំង</h2>
+                    <h2 className="khmer-title-font text-3xl md:text-5xl">ទីតាំងពិធី</h2>
                 </div>
 
                 {/* 3D Card Container with glassmorphism backdrop */}
@@ -41,7 +42,7 @@ export default function LocationSection() {
                     <div className="absolute -inset-4 bg-white/40 backdrop-blur-3xl rounded-[32px] -z-10" />
 
                     {/* Main 3D Card */}
-                    <div className="relative bg-gradient-to-br from-white via-cream/50 to-white rounded-[28px] border-2 border-gold/20 shadow-[0_20px_60px_-15px_rgba(212,175,55,0.3),0_10px_30px_-10px_rgba(94,11,11,0.1)] overflow-hidden transition-all duration-500 hover:shadow-[0_25px_70px_-15px_rgba(212,175,55,0.4),0_15px_40px_-10px_rgba(94,11,11,0.15)] hover:-translate-y-1">
+                    <div className="relative bg-gradient-to-br from-white via-cream/50 to-white rounded-[28px] border-2 border-gold/20 shadow-[0_20px_60px_-15px_rgba(212,175,55,0.3),0_10px_30px_-10px_rgba(94,11,11,0.1)] overflow-hidden transition-all duration-500 hover:shadow-[0_25px_70px_-15px_rgba(212,175,55,0.4),0_15px_40px_-10px_rgba(94,11,11,0.15)]">
 
                         {/* Top decorative border */}
                         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
@@ -50,10 +51,7 @@ export default function LocationSection() {
                             {/* 3D Location Pin Icon */}
                             <div className="flex justify-center mb-8">
                                 <div className="relative group">
-                                    {/* Pin shadow */}
                                     <div className="absolute inset-0 bg-maroon/20 blur-xl rounded-full scale-75 group-hover:scale-90 transition-transform" />
-
-                                    {/* Pin container with 3D effect */}
                                     <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-maroon via-maroon to-maroon/80 flex items-center justify-center border-4 border-gold shadow-[0_8px_24px_-6px_rgba(212,175,55,0.6),inset_0_2px_4px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-all duration-300">
                                         <svg className="w-10 h-10 md:w-12 md:h-12 text-gold drop-shadow-[0_2px_8px_rgba(212,175,55,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -64,68 +62,60 @@ export default function LocationSection() {
                             </div>
 
                             {/* Venue Information */}
-                            <div className="text-center mb-8">
-                                <h3 className="khmer-font text-3xl md:text-4xl text-maroon font-black mb-2 drop-shadow-sm">
+                            <div className="text-center mb-10">
+                                <h3 className="khmer-title-font text-3xl md:text-4xl text-maroon font-black mb-2 drop-shadow-sm leading-relaxed">
                                     {venueDetails.name}
                                 </h3>
                                 <p className="english-font text-lg md:text-xl text-gold-dark font-bold mb-6">
                                     {venueDetails.nameEn}
                                 </p>
 
-                                {/* Gold divider */}
                                 <div className="w-20 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
 
-                                {/* Details grid */}
-                                <div className="max-w-md mx-auto space-y-3">
-                                    {/* Address */}
+                                <div className="max-w-md mx-auto space-y-4">
                                     <div className="flex items-center justify-center gap-3 text-brown/90">
-                                        <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         </svg>
-                                        <div>
-                                            <p className="khmer-font text-base md:text-lg font-bold">{venueDetails.address}</p>
-                                            <p className="english-font text-sm opacity-70">{venueDetails.addressEn}</p>
+                                        <div className="text-left">
+                                            <p className="khmer-font text-base md:text-lg font-bold leading-relaxed">{venueDetails.address}</p>
                                         </div>
-                                    </div>
-
-                                    {/* Date & Time */}
-                                    <div className="flex items-center justify-center gap-3 text-brown/90">
-                                        <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                        </svg>
-                                        <div>
-                                            <p className="khmer-font text-base md:text-lg font-bold">{venueDetails.date}</p>
-                                            <p className="english-font text-sm opacity-70">{venueDetails.time}</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Phone */}
-                                    <div className="flex items-center justify-center gap-3 text-brown/90">
-                                        <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                        </svg>
-                                        <p className="english-font text-base md:text-lg font-bold">{venueDetails.phone}</p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Map Preview Card with 3D depth */}
-                            <div className="relative mb-8 group">
-                                {/* Map shadow layer */}
-                                <div className="absolute -inset-2 bg-gradient-to-b from-gold/20 to-maroon/10 rounded-[24px] blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
+                            {/* Maps Grid: Printed Map & Google Map */}
+                            <div className="grid md:grid-cols-2 gap-8 mb-10">
+                                {/* Printed Map Uploaded by User */}
+                                <div className="relative group flex flex-col">
+                                    <h4 className="khmer-font text-lg font-bold text-center text-maroon mb-4">ផែនទី (Printed Map)</h4>
+                                    <div className="relative w-full aspect-[4/3] md:aspect-[3/2] rounded-[24px] overflow-hidden border-2 border-gold/30 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.2)] bg-cream">
+                                        <Image 
+                                            src="/images/image copy.png"
+                                            alt="Printed Wedding Map"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover"
+                                            quality={100}
+                                        />
+                                    </div>
+                                </div>
 
-                                {/* Map container */}
-                                <div className="relative rounded-[24px] overflow-hidden border-2 border-gold/30 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.5)] h-[280px] md:h-[350px] bg-white">
-                                    <iframe
-                                        src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7744444444444!2d${venueDetails.coordinates.split(',')[1]}!3d${venueDetails.coordinates.split(',')[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzIzLjAiTiAxMDTCsDU1JzQxLjUiRQ!5e0!3m2!1sen!2skh!4v1234567890123!5m2!1sen!2skh`}
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        className="absolute inset-0"
-                                    />
+                                {/* Google Map */}
+                                <div className="relative group flex flex-col">
+                                    <h4 className="khmer-font text-lg font-bold text-center text-maroon mb-4">ផែនទី (Google Maps)</h4>
+                                    <div className="relative rounded-[24px] overflow-hidden border-2 border-gold/30 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.2)] h-[280px] md:h-[350px] bg-white flex-grow">
+                                        <iframe
+                                            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7744444444444!2d${venueDetails.coordinates.split(',')[1]}!3d${venueDetails.coordinates.split(',')[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzIzLjAiTiAxMDTCsDU1JzQxLjUiRQ!5e0!3m2!1sen!2skh!4v1234567890123!5m2!1sen!2skh`}
+                                            width="100%"
+                                            height="100%"
+                                            style={{ border: 0 }}
+                                            allowFullScreen
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            className="absolute inset-0"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 

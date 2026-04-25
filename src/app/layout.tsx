@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Battambang, Playfair_Display } from "next/font/google";
+import { Battambang, Playfair_Display, Moul } from "next/font/google";
 import "./globals.css";
 import MenuBar from "@/components/MenuBar";
 
@@ -7,6 +7,12 @@ const battambang = Battambang({
   variable: "--font-khmer",
   subsets: ["khmer"],
   weight: ["400", "700"],
+});
+
+const moul = Moul({
+  variable: "--font-khmer-title",
+  subsets: ["khmer"],
+  weight: ["400"],
 });
 
 const playfairDisplay = Playfair_Display({
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="km">
       <body
-        className={`${battambang.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${battambang.variable} ${moul.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
         <MenuBar />

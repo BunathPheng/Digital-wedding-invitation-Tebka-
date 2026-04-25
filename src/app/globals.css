@@ -360,6 +360,10 @@ body {
   font-family: var(--font-khmer);
 }
 
+@utility khmer-title-font {
+  font-family: var(--font-khmer-title);
+}
+
 @utility english-font {
   font-family: var(--font-playfair);
 }

@@ -17,7 +17,7 @@ export default function MenuBar() {
 
   return (
     <div className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] md:w-auto max-w-[28rem] md:max-w-max">
-      <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-3 py-2 md:px-6 md:py-3 flex items-center justify-between md:justify-center md:gap-8 border border-gray-100 w-full">
+      <div className="bg-white/90 backdrop-blur-md rounded-[2rem] shadow-[0_8px_30px_rgba(212,175,55,0.2)] px-3 py-2 md:px-6 md:py-3 flex items-center justify-between md:justify-center md:gap-8 border border-gold/20 w-full">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -32,25 +32,25 @@ export default function MenuBar() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="relative flex items-center justify-center transition-all duration-300"
+              className="relative flex items-center justify-center transition-all duration-300 group"
               aria-label={item.id}
             >
               {/* Active Indicator Dot */}
               {isActive && (
-                <div className="absolute -top-1 -right-1 w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#8A9A5B] z-10 border border-white" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-gold z-10 border border-white shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
               )}
               
               {/* Icon Container */}
               <div
                 className={`relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full transition-all duration-300 ${
-                  isActive ? "bg-[#556B2F] scale-105 md:scale-110" : "bg-transparent hover:bg-gray-50"
+                  isActive ? "bg-maroon scale-105 md:scale-110 shadow-md" : "bg-transparent group-hover:bg-gold/10"
                 }`}
               >
                 <Icon
                   className={`w-5 h-5 md:w-6 md:h-6 transition-all duration-300 ${
-                    isActive ? "text-white" : "text-[#556B2F]"
+                    isActive ? "text-white" : "text-maroon/70 group-hover:text-maroon"
                   }`}
-                  strokeWidth={2}
+                  strokeWidth={isActive ? 2.5 : 2}
                 />
               </div>
             </button>

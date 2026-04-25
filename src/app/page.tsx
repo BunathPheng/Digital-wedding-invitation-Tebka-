@@ -6,6 +6,7 @@ import IntroAnimation from "@/components/IntroAnimation";
 import WeddingTimeline from "@/components/WeddingTimeline";
 import LocationSection from "@/components/LocationSection";
 import GiftsSection from "@/components/GiftsSection";
+import Countdown from "@/components/Countdown";
 import React from 'react';
 
 export default function Home() {
@@ -34,16 +35,19 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 w-full max-w-4xl px-4 flex flex-col items-center text-center text-white">
-            <h1 className="khmer-font text-2xl md:text-4xl lg:text-5xl mb-4 md:mb-8 mockup-hero-text font-black tracking-wide leading-relaxed">
+            <h1 className="khmer-title-font text-2xl md:text-4xl lg:text-5xl mb-2 md:mb-4 mockup-hero-text font-black tracking-wide leading-relaxed">
               សិរីមង្គលអាពាហ៍ពិពាហ៍
             </h1>
+            <h2 className="english-font text-sm md:text-xl mb-4 md:mb-8 font-bold tracking-[0.2em] uppercase opacity-90">
+              The Wedding Reception
+            </h2>
 
-            <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10">
-              <span className="khmer-font text-2xl md:text-3xl font-bold opacity-90">ផេង ប៊ុនណាត</span>
+            <div className="flex items-center gap-3 md:gap-6 mb-6 md:mb-10">
+              <span className="khmer-title-font text-3xl md:text-5xl font-bold opacity-90">សុខស៊ីញ</span>
               <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
-                <span className="text-red-500 text-lg md:text-2xl animate-pulse">❤️</span>
+                <span className="text-red-500 text-xl md:text-3xl animate-pulse">❤️</span>
               </div>
-              <span className="khmer-font text-2xl md:text-3xl font-bold opacity-90">ចាន់ ទេវី</span>
+              <span className="khmer-title-font text-3xl md:text-5xl font-bold opacity-90">ពុធថា</span>
             </div>
 
             <p className="khmer-font text-lg md:text-2xl mb-2 opacity-90">សូមគោរពអញ្ជើញ</p>
@@ -66,7 +70,7 @@ export default function Home() {
 
             <div className="mt-4 md:mt-10 space-y-2 md:space-y-4">
               <p className="khmer-font text-lg md:text-2xl lg:text-3xl font-black tracking-tighter">
-                ថ្ងៃអាទិត្យ ទី ០១ ខែ កុម្ភៈ ឆ្នាំ ២០២៦ ម៉ោង ៥:២០ ល្ងាច
+                ថ្ងៃសុក្រ ទី ២៩ ខែ ឧសភា ឆ្នាំ ២០២៦ ម៉ោង ៥:២០ ល្ងាច
               </p>
               <p className="english-font text-sm md:text-lg uppercase tracking-[0.2em] md:tracking-[0.4em] font-bold opacity-80">
                 kroch chamr
@@ -74,17 +78,19 @@ export default function Home() {
             </div>
 
             <div className="mt-8 md:mt-12">
-              <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white text-sm md:text-base px-6 py-2 md:px-8 md:py-3 rounded-xl flex items-center gap-2 hover:bg-white/20 transition-all">
-                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                Add to Calendar
+              <button 
+                onClick={() => document.getElementById('countdown')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white/10 backdrop-blur-md border border-white/30 text-white text-sm md:text-base px-8 py-2 md:px-10 md:py-3 rounded-full hover:bg-white/20 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+              >
+                <span className="khmer-font font-bold">មើលកម្មវិធី</span>
               </button>
             </div>
 
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-              <svg className="w-8 h-8 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-            </div>
           </div>
         </section>
+
+        {/* 1.5 COUNTDOWN - Dedicated Timer Section */}
+        <Countdown />
 
         {/* 2. FAMILY - Ceremonial Parents Section */}
         <section id="family" className="py-16 md:py-24 lg:py-32 section-container mx-auto max-w-5xl px-4">
@@ -118,7 +124,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
               <div className="trad-photo-frame reveal-up">
                 <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image src="/images/couple.png" alt="Love Story" fill className="object-cover transition-transform duration-[4s] hover:scale-110" />
+                  <Image src="/images/1T8A0703.jpg" alt="Love Story" fill className="object-cover transition-transform duration-[4s] hover:scale-110" />
                 </div>
                 <div className="ornate-corner-svg top-0 left-0 scale-50 opacity-30" />
               </div>
@@ -149,14 +155,16 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
-                "138337a7dd2d6ab0415eee10b7c286cb.jpg",
-                "a58cda6aaba3014bb4f911fd2053c4ab.jpg",
-                "00b0bc268205fa5f8aff1a859b8cccee.jpg",
-                "18334d20531bae69b882960af71a6113.jpg",
-                "ac5f766c6250734b2a99e781c575c950.jpg",
-                "2ba2ffa21d916557843912bec97c82e2.jpg",
-                "b6337299d6257453281023b70419d2ee.jpg",
-                "d4ccbf6e51c1ce0999504b16774af02e.jpg"
+                "0E9A9193.jpg",
+                "0E9A9314.jpg",
+                "1T8A9354.jpg",
+                "361A1486.jpg",
+                "361A1739.jpg",
+                "361A1908.jpg",
+                "361A1950.jpg",
+                "361A2214.jpg",
+                "361A2410.jpg",
+                "361A2699.jpg"
               ].map((img, i) => (
                 <div key={i} className="trad-photo-frame reveal-up overflow-hidden group">
                   <div className="relative aspect-[3/4] transition-transform duration-1000 group-hover:scale-110">
@@ -208,7 +216,7 @@ export default function Home() {
         <footer id="footer" className="py-16 md:py-32 text-center relative px-4">
           <div className="gold-divider-form !w-24 md:!w-32" />
           <p className="khmer-font text-3xl md:text-5xl text-maroon font-black mb-4 md:mb-8">សូមអរគុណ!</p>
-          <p className="english-font text-gold-dark text-sm md:text-xl font-bold tracking-[0.2em] md:tracking-[0.4em]">PHENG BUNNAT & CHAN DEVI</p>
+          <p className="english-font text-gold-dark text-sm md:text-xl font-bold tracking-[0.2em] md:tracking-[0.4em]">SOKSIN & PUTTHA</p>
           <p className="english-font text-brown text-xs md:text-sm mt-6 md:mt-10 opacity-40">© 2026 Traditional Wedding Invitation</p>
         </footer>
       </div>

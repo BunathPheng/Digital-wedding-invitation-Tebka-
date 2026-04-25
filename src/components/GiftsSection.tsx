@@ -16,7 +16,7 @@ export default function GiftsSection() {
         },
         bride: {
             bank: "ABA Bank",
-            name: "CHAN DEVI",
+            name: "PUTTHA GNANH",
             khr: "003 764 045", // Assuming same for bride for now unless told otherwise
             usd: "007 291 115",
             qr: "/images/image.png"

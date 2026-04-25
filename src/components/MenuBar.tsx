@@ -11,7 +11,7 @@ export default function MenuBar() {
     { id: "calendar", icon: Calendar, href: "#timeline" }, // or similar
     { id: "location", icon: MapPin, href: "#location" },
     { id: "gallery", icon: Camera, href: "#gallery" },
-    { id: "qrcode", icon: QrCode, href: "#rsvp" }, // Or whatever section
+    { id: "qrcode", icon: QrCode, href: "#gifts" }, // Or whatever section
     { id: "chat", icon: MessageCircle, href: "#rsvp" }, // Or similar
   ];
 

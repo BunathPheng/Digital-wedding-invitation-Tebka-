@@ -50,7 +50,7 @@ export default function Countdown() {
           </h2>
           <p className="khmer-formal-body text-base md:text-xl lg:text-2xl text-brown/90 leading-loose max-w-3xl mx-auto">
             វេលាម៉ោង ៤:០០ ល្ងាច នៅគេហដ្ឋានខាងស្រី<br/>
-            ភូមិទី២ ឃុំរការខួរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ
+            ភូមិទី២ ឃុំរការខ្នុរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ
           </p>
         </div>
 

@@ -9,8 +9,8 @@ export default function LocationSection() {
     const venueDetails = {
         name: "គេហដ្ឋានខាងស្រី",
         nameEn: "Bride's Residence",
-        address: "ទទួលភ្ញៀវកិត្តិយសពិសាភោជនាហារ ភូមិទី២ ឃុំរការខ្មែរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ ។",
-        addressEn: "Village 2, Roka Khmer, Krouch Chhmar, Tboung Khmum",
+        address: "ទទួលភ្ញៀវកិត្តិយសពិសាភោជនាហារ ភូមិទី២ ឃុំរការខ្នុរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ ។",
+        addressEn: "Village 2, Roka Khnor, Krouch Chhmar, Tboung Khmum",
         date: "២៩ ឧសភា ២០២៦",
         time: "០៤:០០ ល្ងាច",
         phone: "089 737 420",

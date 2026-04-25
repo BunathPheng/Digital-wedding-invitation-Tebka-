@@ -22,8 +22,19 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Khmer Wedding Invitation | លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍",
-  description: "A traditional Khmer wedding invitation for our special day.",
+  title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា | Soksin & Puttha Wedding",
+  description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
+  openGraph: {
+    title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា",
+    description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
+    locale: "km_KH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា",
+    description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
+  },
 };
 
 export default function RootLayout({

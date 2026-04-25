@@ -24,6 +24,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា | Soksin & Puttha Wedding",
   description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
+  authors: [{ name: "PHENG BUANTH" }],
+  creator: "PHENG BUANTH",
+  publisher: "PHENG BUANTH",
   openGraph: {
     title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា",
     description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",

@@ -79,7 +79,7 @@ const MusicPlayer: React.FC = () => {
             <div className={`bg-white/90 backdrop-blur-xl px-3 py-1.5 md:px-4 md:py-2 rounded-full border shadow-lg flex items-center gap-2 md:gap-3 transition-all duration-500 ${isPlaying ? 'border-[#556B2F] ring-4 ring-[#556B2F]/10' : 'border-gray-200'}`}>
                 <audio
                     ref={audioRef}
-                    src="/images/Wedding Medley (Beautiful In White, Can't Help Falling In Love, Perfect and more) - Mild Nawin.mp4"
+                    src="/images/-  Ft  - Official MV.mp3"
                     loop
                 >
                     <track kind="captions" />
@@ -90,7 +90,7 @@ const MusicPlayer: React.FC = () => {
                         {isPlaying ? 'កំពុងចាក់...' : 'តន្ត្រីមង្គលការ'}
                     </span>
                     <span className="english-font text-[8px] md:text-[9px] uppercase tracking-[0.1em] font-bold text-gray-400 leading-tight italic">
-                        Wedding Medley
+                        Official MV
                     </span>
                 </div>
 

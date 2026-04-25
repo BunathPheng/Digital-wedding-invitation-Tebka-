@@ -103,7 +103,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             {[
               { title: "ខាងកូនកំលោះ", names: ["លោក គីមនី ប្រុស", "លោកស្រី ឈ លក្ខិណា"] },
-              { title: "ខាងកូនក្រមុំ", names: ["លោក ក្រុញ សុខជា", "លោកស្រី ស្រោង សុខហ៊ាង"] }
+              { title: "ខាងកូនក្រមុំ", names: ["លោក ក្រុញ សុខជា", "លោកស្រី ស្រាង សុខហ៊ាង"] }
             ].map((fam, idx) => (
               <div key={idx} className="trad-card-luxury text-center reveal-up p-6 md:p-12" style={{ animationDelay: `${idx * 0.2}s` }}>
                 <div className="dove-motif mx-auto mb-4 md:mb-6 scale-75 opacity-40" />
@@ -202,7 +202,12 @@ export default function Home() {
           <div className="gold-divider-form !w-24 md:!w-32" />
           <p className="khmer-font text-3xl md:text-5xl text-maroon font-black mb-4 md:mb-8">សូមអរគុណ!</p>
           <p className="english-font text-gold-dark text-sm md:text-xl font-bold tracking-[0.2em] md:tracking-[0.4em]">SOKSIN & PUTTHA</p>
-          <p className="english-font text-brown text-xs md:text-sm mt-6 md:mt-10 opacity-40">© 2026 Traditional Wedding Invitation</p>
+          <p className="english-font text-brown text-[10px] md:text-xs mt-8 md:mt-12 opacity-60 tracking-widest uppercase flex items-center justify-center gap-3">
+            <span className="w-4 md:w-8 h-[1px] bg-gold/30"></span>
+            Design & Developed by Mr. PHENG BUANTH
+            <span className="w-4 md:w-8 h-[1px] bg-gold/30"></span>
+          </p>
+          <p className="english-font text-brown text-xs md:text-sm mt-4 md:mt-6 opacity-40">© 2026 Traditional Wedding Invitation</p>
         </footer>
       </div>
 

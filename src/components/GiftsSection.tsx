@@ -29,7 +29,7 @@ export default function GiftsSection() {
                 <div className="kbach-divider mb-8 md:mb-16" />
                 <div className="trad-section-title">
                     <span>Wedding Blessings</span>
-                    <h2 className="text-2xl md:text-5xl">អំណោយសប្បុរសធម៌</h2>
+                    <h2 className="khmer-title-font text-3xl md:text-5xl">ចំណងដៃ</h2>
                 </div>
 
                 <div className="text-center mb-12 max-w-2xl mx-auto">

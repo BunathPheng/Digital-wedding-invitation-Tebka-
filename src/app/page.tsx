@@ -7,6 +7,7 @@ import WeddingTimeline from "@/components/WeddingTimeline";
 import LocationSection from "@/components/LocationSection";
 import GiftsSection from "@/components/GiftsSection";
 import Countdown from "@/components/Countdown";
+import RsvpForm from "@/components/RsvpForm";
 import React from 'react';
 
 export default function Home() {
@@ -101,8 +102,8 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             {[
-              { title: "ខាងកូនកំលោះ", names: ["លោក សុខ ជា", "អ្នកស្រី ម៉េង ស្រីពៅ"] },
-              { title: "ខាងកូនក្រមុំ", names: ["លោក ចាន់ វីរៈ", "អ្នកស្រី ហែម សុភ័ក្ត្រ"] }
+              { title: "ខាងកូនកំលោះ", names: ["លោក គីមនី ប្រុស", "លោកស្រី ឈ លក្ខិណា"] },
+              { title: "ខាងកូនក្រមុំ", names: ["លោក ក្រុញ សុខជា", "លោកស្រី ស្រោង សុខហ៊ាង"] }
             ].map((fam, idx) => (
               <div key={idx} className="trad-card-luxury text-center reveal-up p-6 md:p-12" style={{ animationDelay: `${idx * 0.2}s` }}>
                 <div className="dove-motif mx-auto mb-4 md:mb-6 scale-75 opacity-40" />
@@ -191,23 +192,7 @@ export default function Home() {
                 <span>Kindly Respond</span>
                 <h2 className="!text-2xl md:!text-4xl">ការបញ្ជាក់វត្តមាន</h2>
               </div>
-              <form className="space-y-6 md:space-y-10">
-                <div className="trad-form-group">
-                  <label className="trad-form-label text-base md:text-xl">ឈ្មោះពេញ / Full Name</label>
-                  <input type="text" className="trad-form-input text-base md:text-xl" placeholder="សូមសរសេរឈ្មោះនៅទីនេះ..." />
-                </div>
-                <div className="trad-form-group">
-                  <label className="trad-form-label text-base md:text-xl">ចំនួនអ្នកចូលរួម / Number of Guests</label>
-                  <select className="trad-form-input appearance-none text-base md:text-xl">
-                    <option>១ នាក់ (1 Guest)</option>
-                    <option>២ នាក់ (2 Guests)</option>
-                    <option>ច្រើនជាង ២ នាក់ (&gt;2 Guests)</option>
-                  </select>
-                </div>
-                <button className="w-full bg-maroon text-white py-4 md:py-6 rounded-xl khmer-font text-lg md:text-2xl font-black border-2 border-gold shadow-2xl hover:bg-maroon-light transition-all active:scale-95">
-                  បញ្ជូនការបញ្ជាក់ / Submit RSVP
-                </button>
-              </form>
+              <RsvpForm />
             </div>
           </div>
         </section>

@@ -238,7 +238,7 @@ function Petals() {
       {petals.map((style, i) => (
         <div
           key={i}
-          className="petal opacity-20 md:opacity-30" // Reduced opacity for consistency and subtlety
+          className="petal opacity-90 md:opacity-100" // Increased opacity for high quality crisp look
           style={{
             left: style.left,
             animationDuration: style.duration,

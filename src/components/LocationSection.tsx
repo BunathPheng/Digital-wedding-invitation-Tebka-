@@ -9,13 +9,13 @@ export default function LocationSection() {
     const venueDetails = {
         name: "គេហដ្ឋានខាងស្រី",
         nameEn: "Bride's Residence",
-        address: "ភូមិទី២ ឃុំរការខួរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ",
-        addressEn: "Village 2, Roka Khnor, Krouch Chhmar, Tboung Khmum",
+        address: "ទទួលភ្ញៀវកិត្តិយសពិសាភោជនាហារ ភូមិទី២ ឃុំរការខ្មែរ ស្រុកក្រូចឆ្មារ ខេត្តត្បូងឃ្មុំ ។",
+        addressEn: "Village 2, Roka Khmer, Krouch Chhmar, Tboung Khmum",
         date: "២៩ ឧសភា ២០២៦",
         time: "០៤:០០ ល្ងាច",
-        phone: "+855 12 345 678", // Replace with real phone
-        mapsUrl: "https://maps.app.goo.gl/udC46bpQhd22WXKD7?g_st=it",
-        coordinates: "12.2289,105.8016" // Approx Krouch Chhmar
+        phone: "089 737 420",
+        mapsUrl: "https://www.google.com/maps/place/12%C2%B014'54.1%22N+105%C2%B046'49.9%22E/@12.2483639,105.7779397,1249m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d12.2483639!4d105.7805146!18m1!1e1?entry=ttu",
+        coordinates: "12.2483639,105.7805146" // Approx Krouch Chhmar
     };
 
     const copyAddress = () => {
@@ -106,7 +106,7 @@ export default function LocationSection() {
                                     <h4 className="khmer-font text-lg font-bold text-center text-maroon mb-4">ផែនទី (Google Maps)</h4>
                                     <div className="relative rounded-[24px] overflow-hidden border-2 border-gold/30 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.2)] h-[280px] md:h-[350px] bg-white flex-grow">
                                         <iframe
-                                            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7744444444444!2d${venueDetails.coordinates.split(',')[1]}!3d${venueDetails.coordinates.split(',')[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzIzLjAiTiAxMDTCsDU1JzQxLjUiRQ!5e0!3m2!1sen!2skh!4v1234567890123!5m2!1sen!2skh`}
+                                            src="https://maps.google.com/maps?q=12.2483639,105.7805146&hl=km&z=15&output=embed"
                                             width="100%"
                                             height="100%"
                                             style={{ border: 0 }}

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
     try {
-        const { name, guests } = await request.json();
+        const { name, guests, message } = await request.json();
 
         const botToken = process.env.TELEGRAM_BOT_TOKEN;
         const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -12,7 +12,7 @@ export async function POST(request: Request) {
             // We return success so the frontend UI doesn't crash during development
             return NextResponse.json({ success: true, warning: "Missing Telegram config" });
         } else {
-            const message = `🎊 *New Wedding RSVP!* 🎊\n\n👤 *Name:* ${name}\n👥 *Guests:* ${guests}`;
+            const telegramMessage = `🎊 *New Wedding RSVP!* 🎊\n\n👤 *Name:* ${name}\n👥 *Guests:* ${guests}${message ? `\n💬 *Wish:* _${message}_` : ''}`;
 
             const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
             
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     chat_id: chatId,
-                    text: message,
+                    text: telegramMessage,
                     parse_mode: "Markdown"
                 })
             });

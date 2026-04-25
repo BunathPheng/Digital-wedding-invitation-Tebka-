@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function RsvpForm() {
     const [name, setName] = useState("");
     const [guests, setGuests] = useState("១ នាក់ (1 Guest)");
+    const [message, setMessage] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -17,13 +18,14 @@ export default function RsvpForm() {
             const res = await fetch("/api/rsvp", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, guests }),
+                body: JSON.stringify({ name, guests, message }),
             });
 
             if (!res.ok) throw new Error("Failed to submit");
             
             setStatus("success");
             setName("");
+            setMessage("");
         } catch (error) {
             console.error(error);
             setStatus("error");
@@ -37,7 +39,7 @@ export default function RsvpForm() {
                     <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <h3 className="khmer-font text-2xl md:text-3xl text-maroon font-bold">សូមអរគុណ!</h3>
-                <p className="english-font text-brown/80">Your RSVP has been successfully sent to the couple via Telegram.</p>
+                <p className="english-font text-brown/80">Your RSVP and beautiful wish have been successfully sent to the couple via Telegram.</p>
                 <button onClick={() => setStatus("idle")} className="mt-6 text-maroon font-bold underline">Submit another</button>
             </div>
         );
@@ -73,6 +75,18 @@ export default function RsvpForm() {
                     <option>៦ នាក់ (6 Guests)</option>
                     <option>ច្រើនជាង ៦ នាក់ (&gt;6 Guests)</option>
                 </select>
+            </div>
+            
+            <div className="trad-form-group">
+                <label className="trad-form-label text-base md:text-xl">សារជូនពរ / Your Wish (Optional)</label>
+                <textarea 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    rows={3}
+                    className="trad-form-input text-base md:text-xl resize-none" 
+                    placeholder="សូមសរសេរសារជូនពរនៅទីនេះ..." 
+                    disabled={status === "loading"}
+                />
             </div>
             
             {status === "error" && (

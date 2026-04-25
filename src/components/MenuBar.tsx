@@ -12,7 +12,7 @@ export default function MenuBar() {
     { id: "location", icon: MapPin, href: "#location" },
     { id: "gallery", icon: Camera, href: "#gallery" },
     { id: "qrcode", icon: QrCode, href: "#rsvp" }, // Or whatever section
-    { id: "chat", icon: MessageCircle, href: "#messages" }, // Or similar
+    { id: "chat", icon: MessageCircle, href: "#rsvp" }, // Or similar
   ];
 
   return (

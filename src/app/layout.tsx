@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា",
     description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
-    url: 'https://digital-wedding-invitation-tebka.vercel.app', // Updated to match your actual domain
+    url: 'https://soksin-puttha-wedding.vercel.app', // Update this with your actual URL
     siteName: 'Soksin & Puttha Wedding',
     images: [
       {
-        url: '/images/361A1739.jpg',
+        url: '/opengraph-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Soksin & Puttha Wedding',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "សិរីមង្គលអាពាហ៍ពិពាហ៍ សុខស៊ីញ & ពុធថា",
     description: "សូមគោរពអញ្ជើញឯកឧត្ដម លោកជំទាវ លោក លោកស្រី និងញាតិមិត្តជិតឆ្ងាយ ចូលរួមជាសាក្សីនៃក្តីស្រលាញ់របស់យើងខ្ញុំ។",
-    images: ['/images/361A1739.jpg'],
+    images: ['/twitter-image.jpg'],
   },
 };
 

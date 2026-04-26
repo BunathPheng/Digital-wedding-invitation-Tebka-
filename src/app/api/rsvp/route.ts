@@ -15,7 +15,7 @@ export async function POST(request: Request) {
             const telegramMessage = `🎊 *New Wedding RSVP!* 🎊\n\n👤 *Name:* ${name}\n👥 *Guests:* ${guests}${message ? `\n💬 *Wish:* _${message}_` : ''}`;
 
             const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-            
+
             const res = await fetch(telegramUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
